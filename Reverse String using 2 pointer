@@ -1,0 +1,24 @@
+public class Main
+{
+    public static String swap(String s , int i , int j){
+        StringBuilder str = new StringBuilder(s);
+        
+        str.setCharAt(i , s.charAt(j));
+        str.setCharAt(j ,s.charAt(i));
+        
+        
+       return  str.toString();
+        
+        
+    }
+	public static void main(String[] args) {
+	    
+	    String str = " Hello World";
+	    
+	    int i= 0 , j= str.length()-1 ;
+	    
+	    str = swap(str , i , j );
+	    
+		System.out.println("Reverse string : " +str);
+	}
+}
