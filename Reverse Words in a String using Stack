@@ -1,0 +1,37 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		String st = "Shubham is best";
+		st = st + " ";
+		
+		String str = "";
+		
+		Stack<String>sta = new Stack<String>();
+		
+		for(int i=0 ;i<st.length() ; i++){
+		    
+		    if(st.charAt(i) == ' ')
+		    {
+		        sta.push(str);
+		        str = "";
+		    }
+		    else{
+		        str += st.charAt(i);
+		    }
+		}
+		
+		String ans = "";
+		
+		while(sta.size() != 1)
+		{
+		   ans += sta.peek() + " ";
+		   sta.pop();
+		}
+		
+		ans+= sta.peek();
+		
+		System.out.print(ans);
+	}
+}
