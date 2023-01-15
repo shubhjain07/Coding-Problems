@@ -1,0 +1,31 @@
+public class Main
+{
+    public static void nonrep(String st , int n){
+        
+        char c[] = st.toCharArray();
+        int freq[] = new int[100];
+        
+        for(int i= 0 ; i<n  ;i++){
+            freq[i] = 1;
+            for(int j=i+1 ; j<n ; j++){
+                if(c[i] == c[j]){
+                    freq[i]++;
+                    c[j] = '-';
+                }
+                
+            }
+        }
+        
+        for(int i= 0 ;i<n ; i++){
+            if(freq[i] == 1 && c[i]!= ' ' && c[i] != '-')
+            System.out.print(c[i] + " ");
+        }
+    }
+	public static void main(String[] args) {
+	    
+	    String str =  "take u forward";
+	    int n= str.length();
+		System.out.println("Non Repeating Char");
+		nonrep(str ,n );
+	}
+}
